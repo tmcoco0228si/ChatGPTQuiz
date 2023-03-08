@@ -37,8 +37,11 @@ interface Obj {
 // }
 
 //答え
-function getProperty(obj: Obj, key: string): any {
-  return obj[key];
+function getProperty(obj: { [key: string]: any }, key: string): any {
+  if (obj.hasOwnProperty(key)) {
+    return obj[key];
+  }
+  return undefined;
 }
 
 /*
