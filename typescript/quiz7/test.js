@@ -51,4 +51,3 @@ function removeDuplicateValues(arr) {
 }
 var arr = [2, 2, 2, 2, 2, 2, 111, 111, 999];
 var resArr = removeDuplicateValues(arr);
-console.log(resArr);
