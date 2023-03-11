@@ -49,18 +49,17 @@ function arrSort(arr: number[]): number[] {
   const result: number[] = [];
 
   arr.sort((a, b) => {
-    return -1;
+    return b - a;
   });
   return arr;
 }
 
 console.log(arrSort(num));
 //4
-
 function juhuju(arr: any[]): any[] {
   let resultArr: any = [];
 
-  resultArr = new Set(arr);
+  resultArr = Array.from(new Set(arr));
 
   return resultArr;
 }

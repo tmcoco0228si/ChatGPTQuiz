@@ -37,7 +37,7 @@ console.log(margeObj1(a, b));
 function arrSort(arr) {
     var result = [];
     arr.sort(function (a, b) {
-        return -1;
+        return b - a;
     });
     return arr;
 }
@@ -45,7 +45,7 @@ console.log(arrSort(num));
 //4
 function juhuju(arr) {
     var resultArr = [];
-    resultArr = new Set(arr);
+    resultArr = Array.from(new Set(arr));
     return resultArr;
 }
 console.log(juhuju(num));
