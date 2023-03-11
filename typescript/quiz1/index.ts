@@ -3,7 +3,7 @@
 指定された配列の要素をすべて2倍にして新しい配列を作成する関数 doubleArray を実装してください。
 */
 
-function doubleArray(arr: number[]): number[] {
+function doubleArray1(arr: number[]): number[] {
   let resultArr: number[] = [];
   for (let i = 0; i < arr.length; i++) {
     resultArr.push(arr[i] * 2);
