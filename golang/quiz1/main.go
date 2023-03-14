@@ -38,9 +38,12 @@ func RemoveDuplicates1(arr []int) (unique []int) {
 
 	for _, v := range arr {
 		if !m[v] {
+			//m[v] = key
+			// (m[v] = true) = value
 			m[v] = true
 			unique = append(unique, v)
 		}
+		fmt.Println(m)
 	}
 
 	return unique
@@ -71,17 +74,11 @@ func SortAscending1() {
 func main() {
 	// 整数の配列
 	arr1 := []int{4, 2, 8, 3, 1, 6, 2, 8}
-
-	fmt.Println(Max1(arr1))              // 1
-	fmt.Println(Average1(arr1))          // 2
-	fmt.Println(RemoveDuplicates1(arr1)) // 3
-
 	// Person 構造体
 	type Person struct {
 		Name string
 		Age  int
 	}
-
 	// p1 := Person{"Alice", 25}
 
 	// // Point 構造体
@@ -95,5 +92,8 @@ func main() {
 
 	// // 整数のスライス
 	// nums1 := []int{1, 4, 2, 8, 3, 4, 9, 2, 1}
+	fmt.Println(Max1(arr1))              // 1
+	fmt.Println(Average1(arr1))          // 2
+	fmt.Println(RemoveDuplicates1(arr1)) // 3
 
 }
