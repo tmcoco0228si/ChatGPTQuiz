@@ -81,7 +81,7 @@ const data16: { [key: string]: any } = [
 ];
 
 let newData16: { [key: string]: any } = {};
-newData16 = data16.map((v: { id: any; }) => {
+newData16 = data16.map((v: { id: any }) => {
   return v.id;
 });
 
