@@ -105,51 +105,26 @@ func IsSumEven1(arr []int) bool {
 	return res
 }
 
-func MostFrequent1(arr interface{}) interface{} {
-	var m interface{}
+func MostFrequent1(nums []int) int {
+	freq := make(map[int]int)
+	maxFreq := 0
+	mostFreqNum := 0
 
-	switch t := arr.(type) {
-	case []string:
-		for _, v := range t {
-			fmt.Println(v)
+	for _, num := range nums {
+		freq[num]++
+		if freq[num] > maxFreq {
+			maxFreq = freq[num]
+			mostFreqNum = num
 		}
-	case []int:
-		for _, v := range t {
-			fmt.Println(v)
-		}
-	default:
-		fmt.Println(t)
 	}
-
-	return m
+	return mostFreqNum
 }
 
-func getMode(arr interface{}) interface{} {
-
-	var mode interface{}
-	var maxFreq interface{}
-	switch t := arr.(type) {
-	case []string:
-	case []int:
-		freq := make(map[int]int)
-		maxFreq = 0
-		mode = 0
-		for _, val := range t {
-			freq[val]++
-			if freq[val] > maxFreq {
-				maxFreq = freq[val]
-				mode = val
-			}
-		}
-		return mode
-	default:
-
-	}
-	return mode
-}
-
-func SortAscending1() {
-
+func SortAscending1(nums []int) []int {
+	sort.Slice(nums, func(i, j int) bool {
+		return nums[i] < nums[j]
+	})
+	return nums
 }
 
 func main() {
@@ -169,5 +144,5 @@ func main() {
 	fmt.Println(Destance1(p2, p3))       // 7
 	fmt.Println(IsSumEven1(arr1))        // 8
 	fmt.Println(MostFrequent1(arr1))     // 9
-
+	fmt.Println(SortAscending1(arr1))    // 10
 }
