@@ -32,9 +32,57 @@ console.log(`Min: ${Math.min(...ages16)}`);
 // オブジェクト操作
 
 // 1 オブジェクト person に、新しいプロパティ age を追加する。
+const person16: { [key: string]: any } = { name: "John", gender: "male" };
+
+person16.age = 20;
+console.log(person16);
 
 // 2 オブジェクト product の値が null または undefined のプロパティを削除する。
+const product16 = { name: "book", price: null, author: "Tom" };
+const newObj: { [key: string]: any } = {};
+for (const [key, value] of Object.entries(product16)) {
+  console.log(key, value);
+  if (value !== null && value !== undefined) {
+    newObj[key] = value;
+  }
+}
+console.log(newObj);
+
 // 3 オブジェクト user のすべてのプロパティの値を、数値型から文字列型に変換する。
+const user16: { [key: string]: any } = {
+  name: "Alice",
+  age: 25,
+  address: "Tokyo",
+  phone: 1234567890,
+};
+
+const newUser16: { [key: string]: any } = {};
+for (const [key, value] of Object.entries(user16)) {
+  newUser16[key] = String(value);
+}
+
+console.log(newUser16);
+
 // 4 オブジェクト book の title プロパティの値を、toUpperCase() メソッドを使って大文字に変換する。
+const book16: { [key: string]: any } = {
+  title: "TypeScript Handbook",
+  author: "Microsoft",
+  pages: 300,
+};
+book16.title = book16.title.toUpperCase();
+
+console.log(book16);
 
 // 5 オブジェクト data に含まれる、すべてのオブジェクトの id プロパティを配列にして取り出す。
+const data16: { [key: string]: any } = [
+  { id: 1, name: "Alice", age: 25 },
+  { id: 2, name: "Bob", age: 30 },
+  { id: 3, name: "Charlie", age: 20 },
+];
+
+let newData16: { [key: string]: any } = {};
+newData16 = data16.map((v: { id: any; }) => {
+  return v.id;
+});
+
+console.log(newData16);
